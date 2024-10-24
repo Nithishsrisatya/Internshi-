@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #06021b;
+            flex-direction: column;
+        }
+
+        .navigation {
+            position: relative;
+            width: 400px;
+            height: 70px;
+            background: linear-gradient(45deg, #2196f3, #e91e63);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            margin-bottom: 40px; /* Space between navigation and content */
+        }
+
+        .navigation ul {
+            display: flex;
+            width: 350px;
+        }
+
+        .navigation ul li {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            list-style: none;
+            z-index: 1;
+        }
+
+        .navigation ul li a {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+            font-weight: 500;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navigation ul li a .icon {
+            line-height: 75px;
+            font-size: 1.5em;
+            transition: .5s;
+        }
+
+        .navigation ul li.active a .icon {
+            transform: translateY(-32px);
+        }
+
+        .navigation ul li a .text {
+            position: absolute;
+            color: #fff;
+            font-weight: 400;
+            font-size: .75em;
+            letter-spacing: .05em;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: .5s;
+        }
+
+        .navigation ul li.active a .text {
+            opacity: 1;
+            transform: translateY(10px);
+        }
+
+        .indicator {
+            position: absolute;
+            top: -50%;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, #2196f3, #e91e63);
+            border: 6px solid #06021b;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .5s;
+        }
+
+        .navigation ul li:nth-child(1).active~.indicator {
+            transform: translateX(calc(70px * 0));
+        }
+        .navigation ul li:nth-child(2).active~.indicator {
+            transform: translateX(calc(70px * 1));
+        }
+        .navigation ul li:nth-child(3).active~.indicator {
+            transform: translateX(calc(70px * 2));
+        }
+        .navigation ul li:nth-child(4).active~.indicator {
+            transform: translateX(calc(70px * 3));
+        }
+        .navigation ul li:nth-child(5).active~.indicator {
+            transform: translateX(calc(70px * 4));
+        }
+
+        .home-content {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #f9f9f9;
+        }
+
+        .instrument-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .instrument-link {
+            text-decoration: none;
+            position: relative;
+            width: 250px;
+            perspective: 1000px; /* Enables 3D effect */
+        }
+
+        .instrument-card {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .instrument-card.flipped {
+            transform: rotateY(360deg);
+        }
+
+        .instrument-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            backface-visibility: hidden; /* Hides back face */
+        }
+
+        .instrument-name {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5rem;
+            color: white;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            backface-visibility: hidden; /* Hides back face */
+        }
+
+        .instrument-link:hover .instrument-card {
+            transform: rotateY(360deg);
+        }
+
+        .instrument-link:hover .instrument-name {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .navigation {
+                width: 100%;
+                height: 50px;
+            }
+
+            .navigation ul {
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .instrument-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <ul>
+            <li class="active"><a href="home.html"><span class="icon">🏠</span><span class="text">Home</span></a></li>
+            <li><a href="piano.html"><span class="icon">🎹</span><span class="text">Piano</span></a></li>
+            <li><a href="drum.html"><span class="icon">🥁</span><span class="text">Drum Kit</span></a></li>
+            <li><a href="about.html"><span class="icon">ℹ️</span><span class="text">About</span></a></li>
+            <li><button onclick="logout()"><span class="icon">🚪</span><span class="text">Logout</span></button></li>
+            <div class="indicator"></div>
+        </ul>
+    </div>
+
+    <div class="home-content">
+        <h1>Welcome to the Music Instruments Page</h1>
+        <p>Select your instrument:</p>
+
+        <div class="instrument-container">
+            <a href="piano.html" class="instrument-link">
+                <div class="instrument-card">
+                    <img src="image/Piano.png" alt="Piano" class="instrument-image">
+                    <span class="instrument-name">Piano</span>
+                </div>
+            </a>
+            <a href="drum.html" class="instrument-link">
+                <div class="instrument-card">
+                    <img src="image/DrumKit.png" alt="Drum Kit" class="instrument-image">
+                    <span class="instrument-name">Drum Kit</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.instrument-link').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.querySelector('.instrument-card').classList.add('flipped');
+            });
+
+            link.addEventListener('mouseleave', () => {
+                link.querySelector('.instrument-card').classList.remove('flipped');
+            });
+        });
+
+        const navigationItems = document.querySelectorAll('.navigation ul li');
+        const indicator = document.querySelector('.indicator');
+
+        navigationItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                navigationItems.forEach((li) => li.classList.remove('active'));
+                item.classList.add('active');
+                indicator.style.transform = `translateX(calc(70px * ${index}))`;
+            });
+        });
+    </script>
+</body>
+</html>

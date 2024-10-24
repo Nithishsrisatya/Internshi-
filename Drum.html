@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Drum.css">
+    <script defer src="Drum.js"></script> <!-- defer ensures that the script is loaded after the HTML -->
+    <title>Drums</title>
+</head>
+<body>
+    <div class="drumkit">
+        <div class="drum kick kick-l" data-note="kick"></div> 
+        <div class="drum kick kick-r" data-note="kick2"></div> 
+        <div class="drum snare" data-note="snare">V</div>
+        <div class="drum cymbal hihat" data-note="hihat">M</div> 
+        <div class="drum tom tom1" data-note="tom1">G</div> 
+        <div class="drum tom tom2" data-note="tom2">H</div>
+        <div class="drum tom tom3" data-note="tom3">J</div> 
+        <div class="drum cymbal crash1" data-note="crash1">I</div>
+        <div class="drum cymbal crash2" data-note="crash2">T</div>
+    </div>
+    <audio id="kick" src="/tunes/kick.wav" hidden preload="auto"></audio>
+    <audio id="kick2" src="/tunes/kick.wav" hidden preload="auto"></audio>
+    <audio id="snare" src="/tunes/snare.wav" hidden preload="auto"></audio>
+    <audio id="hihat" src="/tunes/hihat.wav" hidden preload="auto"></audio>
+    <audio id="tom1" src="/tunes/tom1.wav" hidden preload="auto"></audio>
+    <audio id="tom2" src="/tunes/tom2.wav" hidden preload="auto"></audio>
+    <audio id="tom3" src="/tunes/tom3.wav" hidden preload="auto"></audio>
+    <audio id="crash1" src="/tunes/crash1.wav" hidden preload="auto"></audio>
+    <audio id="crash2" src="/tunes/crash2.wav" hidden preload="auto"></audio>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+}
+
+.login-wrapper {
+  position: relative;
+  width: 400px;
+  background: #000;
+  box-shadow: 0 0 50px #0ef;
+  border-radius: 20px;
+  padding: 40px;
+  overflow: hidden;
+  text-align: center;
+}
+
+h2 {
+  font-size: 30px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  height: 40px;
+  margin: 15px 0;
+  font-size: 16px;
+  padding: 0 10px;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  outline: none;
+  transition: 0.5s ease-in-out;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+  color: #bbb;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #0ef;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  background: #0ef;
+  box-shadow: 0 0 10px #0ef;
+  font-size: 16px;
+  color: #000;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #0ac;
+  box-shadow: 0 0 15px #0ac;
+}
+
+p {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+p a {
+  color: #0ef;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+#register-message {
+  color: #f00;
+  margin-top: 10px;
+  font-size: 14px;
+}
