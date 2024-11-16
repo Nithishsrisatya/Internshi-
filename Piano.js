@@ -9,7 +9,7 @@ let allKeys = [],
 const playTune = (key) => {
     if (activeKeys[key]) return; // Prevent multiple sounds for the same key
 
-    const audio = new Audio(`/tunes/${key}.wav`);
+    const audio = new Audio(`${key}.wav`);
     audio.loop = true;  // Loop the sound while the key is held down
     audio.volume = volumeSlider.value; // Set the initial volume from the slider
     audio.play();
