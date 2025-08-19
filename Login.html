@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Animated Login & Registration Form | Codehal</title>
+  <title>Login & Registration Form</title>
   <link rel="stylesheet" type="text/css" href="Login.css">
 </head>
 <body>
@@ -23,7 +23,7 @@
         <div class="remember">
           <label><input type="checkbox"> Remember me</label>
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" onclick="login()">Login</button>
         <div class="signUp-link">
           <p>Don't have an account? <a href="register.html" class="signUpBtn-link">Sign Up</a></p>
         </div>
@@ -32,20 +32,5 @@
   </div>
 
   <script src="Login.js"></script>
-  <script>
-    function login() {
-      // Get username and password values
-      var username = document.getElementById('login-username').value;
-      var password = document.getElementById('login-password').value;
-
-      // Basic check if username and password are not empty
-      if (username !== "" && password !== "") {
-        // Redirect to the home page
-        window.location.href = "home.html"; // Change "home.html" to your actual home page file
-      } else {
-        alert("Please enter both username and password");
-      }
-    }
-  </script>
 </body>
 </html>
