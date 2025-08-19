@@ -11,24 +11,38 @@ function login() {
         document.getElementById("message").textContent = "Incorrect username or password.";
     }
 }
-document.getElementById("login-button").addEventListener("click", login);
-document.getElementById("login-username").addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        login();
+
+// Add event listener for login button
+document.addEventListener("DOMContentLoaded", function() {
+    const loginButton = document.querySelector("button[type='submit']");
+    if (loginButton) {
+        loginButton.addEventListener("click", function(e) {
+            e.preventDefault();
+            login();
+        });
     }
 });
-function register(){
-    const username = document.getElementById("register-username").value;
-    const password = document.getElementById("register-password").value;
 
-    localStorage.setItem("username", username);
-    localStorage.setItem("password", password);
-
-    document.getElementById("register-message").textContent = "Registration successful!";
-}
-document.getElementById("register-button").addEventListener("click", register);
-document.getElementById("register-username").addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        register();
+// Add Enter key support for login
+document.addEventListener("DOMContentLoaded", function() {
+    const loginUsername = document.getElementById("login-username");
+    const loginPassword = document.getElementById("login-password");
+    
+    if (loginUsername) {
+        loginUsername.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                login();
+            }
+        });
+    }
+    
+    if (loginPassword) {
+        loginPassword.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                login();
+            }
+        });
     }
 });
