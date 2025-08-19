@@ -21,5 +21,5 @@ document.querySelectorAll('.instrument-link').forEach(link => {
 function logout() {
     localStorage.removeItem("username");
     localStorage.removeItem("password");
-    window.location.href = "Login.html"; // Redirect to login page
+    window.location.href = "index.html"; // Redirect to login page
 }
